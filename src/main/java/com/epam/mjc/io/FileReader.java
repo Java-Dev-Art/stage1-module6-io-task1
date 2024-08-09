@@ -2,13 +2,12 @@ package com.epam.mjc.io;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 
 public class FileReader {
 
-    public Profile getDataFromFile(File file) {
+    public Profile getDataFromFile(File file) throws MyException {
         Profile profile = new Profile();
         try (BufferedReader reader = new BufferedReader(new java.io.FileReader(file))) {
             String line;
@@ -28,7 +27,7 @@ public class FileReader {
                 }
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new MyException(e);
         }
         return profile;
     }
