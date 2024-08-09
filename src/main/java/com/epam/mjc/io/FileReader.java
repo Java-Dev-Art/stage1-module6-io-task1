@@ -4,10 +4,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 
-
 public class FileReader {
 
-    public Profile getDataFromFile(File file) throws MyException {
+    public Profile getDataFromFile(File file) {
         Profile profile = new Profile();
         try (BufferedReader reader = new BufferedReader(new java.io.FileReader(file))) {
             String line;
@@ -27,7 +26,7 @@ public class FileReader {
                 }
             }
         } catch (IOException e) {
-            throw new MyException(e);
+            throw new RuntimeException(e);
         }
         return profile;
     }

@@ -39,7 +39,7 @@ public class FileReaderTest {
     }
 
     @Test
-    public void testProgramReadsDataCorrectly () throws MyException {
+    public void testProgramReadsDataCorrectly (){
         FileReader fileReader = new FileReader();
         Profile actual = fileReader.getDataFromFile(new File(TEST_FILE.toUri()));
         assertEquals(profile, actual);
