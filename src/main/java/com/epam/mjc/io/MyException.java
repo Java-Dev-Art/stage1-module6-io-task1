@@ -2,7 +2,7 @@ package com.epam.mjc.io;
 
 import java.io.IOException;
 
-public class MyException extends Exception{
+public class MyException extends IOException{
     public MyException(String message) {
         super("I have problem with " +message);
     }
